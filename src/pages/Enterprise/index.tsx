@@ -12,6 +12,7 @@ import Communication from './Communication';
 import UserManagement from './UserManagement';
 import Billing from './Billing';
 import Auth from './Auth';
+import Onboarding from './Onboarding';
 import ProtectedRoute from '../../components/ProtectedRoute';
 import Unauthorized from './Auth/Unauthorized';
 
@@ -21,6 +22,7 @@ const Enterprise: React.FC = () => {
       {/* Auth routes */}
       <Route path="/auth/*" element={<Auth />} />
       <Route path="/unauthorized" element={<Unauthorized />} />
+      <Route path="/onboarding" element={<Onboarding />} />
       
       {/* Protected routes */}
       <Route path="/" element={

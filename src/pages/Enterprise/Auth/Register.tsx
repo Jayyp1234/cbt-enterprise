@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, Building, Phone, AlertCircle, CheckCircle, ArrowLeft } from 'lucide-react';
 import { useRegisterMutation } from '../../../store/services/authApi';
 import Button from '../../../components/ui/Button';
+import { TermsAndConditions } from '../../../components/onboarding';
 
 const Register: React.FC = () => {
   const navigate = useNavigate();
@@ -23,6 +24,8 @@ const Register: React.FC = () => {
   const [formError, setFormError] = useState<string | null>(null);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
+  const [showTerms, setShowTerms] = useState(false);
+  const [hasAcceptedTerms, setHasAcceptedTerms] = useState(false);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -72,6 +75,10 @@ const Register: React.FC = () => {
       setFormError('Please enter your phone number');
       return false;
     }
+    if (!hasAcceptedTerms) {
+      setFormError('Please accept the Terms of Service and Privacy Policy');
+      return false;
+    }
     
     return true;
   };
@@ -106,6 +113,11 @@ const Register: React.FC = () => {
     } catch (err: any) {
       setFormError(err.data?.message || 'Registration failed. Please try again.');
     }
+  };
+
+  const handleTermsAccepted = () => {
+    setShowTerms(false);
+    setHasAcceptedTerms(true);
   };
   
   return (
@@ -348,18 +360,28 @@ const Register: React.FC = () => {
                       id="terms"
                       name="terms"
                       type="checkbox"
-                      required
+                      checked={hasAcceptedTerms}
+                      onChange={() => setShowTerms(true)}
                       className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded mt-1"
+                      required
                     />
                     <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
                       I agree to the{' '}
-                      <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                      <button 
+                        type="button"
+                        onClick={() => setShowTerms(true)}
+                        className="text-indigo-600 hover:text-indigo-500"
+                      >
                         Terms of Service
-                      </a>{' '}
+                      </button>{' '}
                       and{' '}
-                      <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                      <button 
+                        type="button"
+                        onClick={() => setShowTerms(true)}
+                        className="text-indigo-600 hover:text-indigo-500"
+                      >
                         Privacy Policy
-                      </a>
+                      </button>
                     </label>
                   </div>
                 </div>
@@ -411,6 +433,13 @@ const Register: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Terms and Conditions Modal */}
+      <TermsAndConditions
+        isOpen={showTerms}
+        onClose={() => setShowTerms(false)}
+        onAccept={handleTermsAccepted}
+      />
     </div>
   );
 };

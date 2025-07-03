@@ -4,6 +4,7 @@ import { Eye, EyeOff, Mail, Lock, AlertCircle, CheckCircle } from 'lucide-react'
 import { useLoginMutation, useGoogleAuthMutation } from '../../../store/services/authApi';
 import { useAuth } from '../../../hooks/useAuth';
 import Button from '../../../components/ui/Button';
+import { OnboardingFlow } from '../../../components/onboarding';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const Login: React.FC = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [loginSuccess, setLoginSuccess] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
   
   // Redirect if already authenticated
   useEffect(() => {
@@ -48,11 +50,17 @@ const Login: React.FC = () => {
       await login(formData).unwrap();
       setLoginSuccess(true);
       
-      // Redirect after a short delay to show success message
-      setTimeout(() => {
-        const from = (location.state as any)?.from?.pathname || '/';
-        navigate(from, { replace: true });
-      }, 1000);
+      // Check if user needs onboarding
+      const isNewUser = false; // This would come from the login response
+      if (isNewUser) {
+        setShowOnboarding(true);
+      } else {
+        // Redirect after a short delay to show success message
+        setTimeout(() => {
+          const from = (location.state as any)?.from?.pathname || '/';
+          navigate(from, { replace: true });
+        }, 1000);
+      }
       
     } catch (err: any) {
       setFormError(err?.data?.text || 'Login failed. Please check your credentials.');
@@ -79,6 +87,12 @@ const Login: React.FC = () => {
     } catch (err: any) {
       setFormError(err.data?.message || 'Google login failed. Please try again.');
     }
+  };
+
+  const handleOnboardingComplete = () => {
+    setShowOnboarding(false);
+    // Redirect to dashboard
+    navigate('/', { replace: true });
   };
   
   return (
@@ -243,6 +257,14 @@ const Login: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Onboarding Flow */}
+      {showOnboarding && (
+        <OnboardingFlow
+          isNewUser={true}
+          onComplete={handleOnboardingComplete}
+        />
+      )}
     </div>
   );
 };
