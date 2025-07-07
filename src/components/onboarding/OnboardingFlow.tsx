@@ -53,15 +53,22 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({
     setShowSubscription(true);
     
     // In a real app, you would save preferences to the user's profile
-    console.log('User preferences set:', preferences);
+    // Save preferences to API
+    // Example: saveUserPreferences(preferences)
+    
+    // Log for development purposes
+    console.log('User preferences saved:', preferences);
   };
 
   const handleSubscriptionComplete = (plan: SubscriptionPlan) => {
     setShowSubscription(false);
     setUserSubscription(plan);
     
-    // In a real app, you would process the subscription
-    console.log('Subscription selected:', plan);
+    // In a real app, this would connect to a payment processor
+    // Example: processSubscription(plan)
+    
+    // Log for development purposes
+    console.log('Subscription processed:', plan);
     
     // Complete the onboarding process
     onComplete();

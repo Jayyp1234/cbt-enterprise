@@ -62,9 +62,9 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = ({ isOpen, onClose
                 By accessing or using CBT Grinder Enterprise services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
               </p>
               
-              <h4 className="font-medium text-gray-900 mb-2">2. Description of Service</h4>
+              <h4 className="font-medium text-gray-900 mb-2">2. Services Description</h4>
               <p className="mb-4">
-                CBT Grinder Enterprise provides a digital learning platform for tutorial centers and educational institutions to manage students, staff, exams, and payments.
+                CBT Grinder Enterprise provides a comprehensive digital learning platform for tutorial centers and educational institutions to manage students, staff, exams, payments, and educational content. Our services include student management, fee collection, staff management, performance reporting, digital study materials, AI tutoring, and customization options.
               </p>
               
               <h4 className="font-medium text-gray-900 mb-2">3. User Accounts</h4>
@@ -74,7 +74,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = ({ isOpen, onClose
               
               <h4 className="font-medium text-gray-900 mb-2">4. Subscription and Payments</h4>
               <p className="mb-4">
-                Subscription fees are charged on a monthly or annual basis. Payment is due at the beginning of each billing period. Refunds are provided in accordance with our refund policy.
+                Subscription fees are charged on a monthly or annual basis, with annual subscriptions offering a 15% discount. Available plans include Basic (₦25,000/month), Professional (₦45,000/month), Enterprise Pro (₦85,000/month), and Enterprise Plus (₦150,000/month). Payment is due at the beginning of each billing period. Refunds are provided in accordance with our refund policy.
               </p>
               
               <h4 className="font-medium text-gray-900 mb-2">5. Content and Intellectual Property</h4>
@@ -121,7 +121,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = ({ isOpen, onClose
             <div className="h-48 overflow-y-auto bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4 text-sm text-gray-700">
               <h4 className="font-medium text-gray-900 mb-2">1. Information We Collect</h4>
               <p className="mb-4">
-                We collect personal information such as name, email address, phone number, and payment information when you register for our services. We also collect usage data to improve our services.
+                We collect personal information such as name, email address, phone number, and payment information when you register for our services. For educational institutions, we collect information about students, staff, and academic performance. We also collect usage data to improve our services.
               </p>
               
               <h4 className="font-medium text-gray-900 mb-2">2. How We Use Your Information</h4>
@@ -141,7 +141,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = ({ isOpen, onClose
               
               <h4 className="font-medium text-gray-900 mb-2">5. Student Data</h4>
               <p className="mb-4">
-                Educational institutions using our platform are responsible for obtaining appropriate consent for the collection and use of student data in accordance with applicable laws.
+                Educational institutions using our platform are responsible for obtaining appropriate consent for the collection and use of student data in accordance with applicable laws. Our platform includes features for managing student records, performance tracking, fee collection, and communication with parents/guardians.
               </p>
               
               <h4 className="font-medium text-gray-900 mb-2">6. Cookies and Tracking</h4>

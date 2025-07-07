@@ -15,12 +15,14 @@ function App() {
     if (!hasVisitedBefore) {
       setIsFirstVisit(true);
       setShowOnboarding(true);
-      localStorage.setItem('hasVisitedBefore', 'true');
+      // We'll set this after onboarding completes to ensure it shows for first-time visitors
     }
   }, []);
 
   const handleOnboardingComplete = () => {
     setShowOnboarding(false);
+    // Now we can mark that they've visited before
+    localStorage.setItem('hasVisitedBefore', 'true');
   };
 
   return (

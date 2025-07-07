@@ -83,14 +83,14 @@ const PreferenceSelection: React.FC<PreferenceSelectionProps> = ({ isOpen, onClo
   };
 
   const interests = [
-    { id: 'mathematics', label: 'Mathematics', icon: '🧮' },
-    { id: 'science', label: 'Science', icon: '🔬' },
-    { id: 'languages', label: 'Languages', icon: '🔤' },
-    { id: 'technology', label: 'Technology', icon: '💻' },
-    { id: 'arts', label: 'Arts', icon: '🎨' },
-    { id: 'business', label: 'Business', icon: '📊' },
-    { id: 'engineering', label: 'Engineering', icon: '⚙️' },
-    { id: 'medicine', label: 'Medicine', icon: '🩺' },
+    { id: 'student_management', label: 'Student Management', icon: '👥' },
+    { id: 'fee_collection', label: 'Fee Collection', icon: '💰' },
+    { id: 'staff_management', label: 'Staff Management', icon: '👨‍💼' },
+    { id: 'performance_reports', label: 'Performance Reports', icon: '📊' },
+    { id: 'study_materials', label: 'Study Materials', icon: '📚' },
+    { id: 'ai_tutoring', label: 'AI Tutoring', icon: '🤖' },
+    { id: 'bulk_messaging', label: 'Bulk Messaging', icon: '✉️' },
+    { id: 'custom_branding', label: 'Custom Branding', icon: '🎨' },
   ];
 
   const languages = ['English', 'French', 'Yoruba', 'Igbo', 'Hausa', 'Arabic'];

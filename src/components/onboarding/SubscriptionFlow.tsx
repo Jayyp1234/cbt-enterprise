@@ -58,7 +58,7 @@ const SubscriptionFlow: React.FC<SubscriptionFlowProps> = ({
     {
       id: 'basic',
       name: 'Basic',
-      price: billingCycle === 'monthly' ? 25000 : 250000,
+      price: billingCycle === 'monthly' ? 25000 : 240000,
       billingCycle,
       features: [
         'Up to 100 students',
@@ -66,7 +66,9 @@ const SubscriptionFlow: React.FC<SubscriptionFlowProps> = ({
         'Basic analytics',
         'Standard support',
         'Basic branding',
-        '10GB storage'
+        '10GB storage',
+        'Study Materials',
+        'Results & Analytics'
       ],
       studentsLimit: 100,
       staffLimit: 5,
@@ -75,7 +77,7 @@ const SubscriptionFlow: React.FC<SubscriptionFlowProps> = ({
     {
       id: 'professional',
       name: 'Professional',
-      price: billingCycle === 'monthly' ? 45000 : 450000,
+      price: billingCycle === 'monthly' ? 45000 : 432000,
       billingCycle,
       features: [
         'Up to 250 students',
@@ -83,7 +85,12 @@ const SubscriptionFlow: React.FC<SubscriptionFlowProps> = ({
         'Advanced analytics',
         'Priority support',
         'Custom branding',
-        '25GB storage'
+        '25GB storage',
+        'Study Materials',
+        'Results & Analytics',
+        'Mock Examinations',
+        'Academic Dictionary',
+        'Smart Fee Collection'
       ],
       studentsLimit: 250,
       staffLimit: 15,
@@ -92,7 +99,7 @@ const SubscriptionFlow: React.FC<SubscriptionFlowProps> = ({
     {
       id: 'enterprise',
       name: 'Enterprise Pro',
-      price: billingCycle === 'monthly' ? 85000 : 850000,
+      price: billingCycle === 'monthly' ? 85000 : 816000,
       billingCycle,
       features: [
         'Up to 500 students',
@@ -102,7 +109,12 @@ const SubscriptionFlow: React.FC<SubscriptionFlowProps> = ({
         'Custom branding',
         'API access',
         'Data export',
-        '50GB storage'
+        '50GB storage',
+        'AI-Powered Tutor Assistant',
+        'Staff Management & Payroll',
+        'Performance Feedback Reports',
+        'Bulk Messaging System',
+        'All Core Learning Features'
       ],
       studentsLimit: 500,
       staffLimit: 'unlimited',
@@ -112,7 +124,7 @@ const SubscriptionFlow: React.FC<SubscriptionFlowProps> = ({
     {
       id: 'enterprise-plus',
       name: 'Enterprise Plus',
-      price: billingCycle === 'monthly' ? 150000 : 1500000,
+      price: billingCycle === 'monthly' ? 150000 : 1440000,
       billingCycle,
       features: [
         'Up to 1000 students',
@@ -124,7 +136,12 @@ const SubscriptionFlow: React.FC<SubscriptionFlowProps> = ({
         'Data export',
         '100GB storage',
         'White labeling',
-        'Custom integrations'
+        'Custom integrations',
+        'Points & Wallet System',
+        'Parent Portal Access',
+        'Complete White Labeling',
+        'Custom Domain',
+        'All Premium Features'
       ],
       studentsLimit: 1000,
       staffLimit: 'unlimited',
